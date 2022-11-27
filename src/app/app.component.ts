@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import RecipeModel from './recipes/recipe.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'first-angular-app';
+  currentRecipe:RecipeModel|undefined;
+
+  onCurrentRecipeSet(currentRecipe:RecipeModel){
+    this.currentRecipe = currentRecipe;
+  }
 }

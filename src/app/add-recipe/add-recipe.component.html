@@ -1,0 +1,28 @@
+<div (click)="handleClosingModal($event)" 
+    class="my-wrapper position-absolute top-0 end-0 start-0 bottom-0 bg-dark opacity-50"></div>
+<div class="my-card position-absolute top-50 start-50 translate-middle rounded overflow-hidden">
+    <div class="bg-light p-3">
+        <label for="recipeName">Name</label>
+        <input type="text" id="recipeName" class="form-control" [value]="name" (keyup)="onNameChange($event)"/>
+        <label for="recipeImage">Image Url</label>
+        <input type="text" id="recipeImage" class="form-control" [value]="image" (keyup)="onImageChange($event)"/>
+        <div>
+            <label for="recipeIngredients">Ingredients</label>
+            <div class="input-group">
+                <input type="text" id="recipeIngredients" [value]="ingredient" (keyup)="onIngredientChange($event)" class="form-control">
+                <div class="input-group-text fs-4 cursor-pointer" (click)="onIngredientSubmit($event)">
+                    +
+                </div>
+            </div>
+            <ul class="row">
+                <li class="col-4" *ngFor="let ingredient of ingredients">
+                    {{ingredient}}
+                </li>
+            </ul>
+        </div>
+        <label for="recipeDescription">Description</label>
+        <textarea id="recipeDescription" class="form-control" value="">{{description}}</textarea>
+        <br/>
+        <button class="btn btn-success w-100" (click)="handleAddingRecipe($event)">Add Recipe</button>
+    </div>
+</div>
