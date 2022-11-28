@@ -1,5 +1,6 @@
-<div class="" style="z-index: 1">
+<div class="d-flex justify-content-between w-100 align-items-center" style="z-index: 1">
     <h2 class="list-group-heading">{{recipe?.name}}</h2>
+    <button class="btn btn-close btn-close-white"
+    (click)="handleDeleteClick($event)"></button>
 </div>
 <img src={{recipe?.image}} class="img-responsive position-absolute top-0 start-0 bottom-0 " style="" alt="image"/>
-
